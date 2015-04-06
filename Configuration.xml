@@ -95,11 +95,12 @@
 			<ModalityUseMode>Use</ModalityUseMode>
 			<SynchronousExtensionAndAddInCallUseMode>Use</SynchronousExtensionAndAddInCallUseMode>
 			<InterfaceCompatibilityMode>Version8_2</InterfaceCompatibilityMode>
-			<CompatibilityMode>Version8_2_16</CompatibilityMode>
+			<CompatibilityMode>Version8_3_4</CompatibilityMode>
 			<DefaultConstantsForm/>
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
+			<Role>Роль1</Role>
 			<Catalog>Машины</Catalog>
 			<Catalog>ЦветМашины</Catalog>
 			<Catalog>Скидки</Catalog>
