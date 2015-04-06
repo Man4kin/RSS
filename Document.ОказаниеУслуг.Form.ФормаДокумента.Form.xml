@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерExtendedTooltip" id="35"/>
+		</InputField>
+		<InputField name="Дата" id="3">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ДатаExtendedTooltip" id="36"/>
+		</InputField>
+		<InputField name="Машина" id="5">
+			<DataPath>Объект.Машина</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="МашинаКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="МашинаExtendedTooltip" id="37"/>
+			<Events>
+				<Event name="OnChange">МашинаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТекстОписания" id="7">
+			<DataPath>Объект.ТекстОписанияРабот</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ContextMenu name="ТекстОписанияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ТекстОписанияExtendedTooltip" id="38"/>
+		</InputField>
+		<InputField name="Владелец" id="9">
+			<DataPath>Объект.Владелец</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="ВладелецExtendedTooltip" id="39"/>
+		</InputField>
+		<InputField name="КонтактныйТелефон" id="11">
+			<DataPath>Объект.КонтактныйТелефон</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КонтактныйТелефонКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="КонтактныйТелефонExtendedTooltip" id="40"/>
+		</InputField>
+		<InputField name="Скидка" id="13">
+			<DataPath>Объект.Скидка</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="СкидкаКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="СкидкаExtendedTooltip" id="41"/>
+			<Events>
+				<Event name="OnChange">СкидкаПриИзменении</Event>
+				<Event name="Clearing">СкидкаОчистка</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Группа1" id="32">
+			<Group>Horizontal</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="Группа1ExtendedTooltip" id="42"/>
+			<ChildItems>
+				<LabelDecoration name="ТекстСкидки" id="30">
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<SkipOnInput>true</SkipOnInput>
+					<TextColor>#4455FF</TextColor>
+					<Font ref="sys:DefaultGUIFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<VerticalAlign>Center</VerticalAlign>
+					<ContextMenu name="ТекстСкидкиКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ТекстСкидкиExtendedTooltip" id="43"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Услуги" id="15">
+			<Representation>List</Representation>
+			<Footer>true</Footer>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Услуги</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="УслугиКонтекстноеМеню" id="16"/>
+			<AutoCommandBar name="УслугиКоманднаяПанель" id="17"/>
+			<ExtendedTooltip name="УслугиExtendedTooltip" id="44"/>
+			<SearchStringAddition name="УслугиSearchString" id="45">
+				<Source>
+					<lf:elementId>15</lf:elementId>
+					<lf:additionId>0</lf:additionId>
+				</Source>
+				<ContextMenu name="УслугиSearchStringContextMenu" id="46"/>
+				<ExtendedTooltip name="УслугиSearchStringExtendedTooltip" id="47"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="УслугиViewStatus" id="48">
+				<Source>
+					<lf:elementId>15</lf:elementId>
+					<lf:additionId>1</lf:additionId>
+				</Source>
+				<ContextMenu name="УслугиViewStatusContextMenu" id="49"/>
+				<ExtendedTooltip name="УслугиViewStatusExtendedTooltip" id="50"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="УслугиSearchControl" id="51">
+				<Source>
+					<lf:elementId>15</lf:elementId>
+					<lf:additionId>2</lf:additionId>
+				</Source>
+				<ContextMenu name="УслугиSearchControlContextMenu" id="52"/>
+				<ExtendedTooltip name="УслугиSearchControlExtendedTooltip" id="53"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="УслугиНомерСтроки" id="18">
+					<DataPath>Объект.Услуги.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УслугиНомерСтрокиКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="УслугиНомерСтрокиExtendedTooltip" id="54"/>
+				</LabelField>
+				<InputField name="УслугиУслуга" id="20">
+					<DataPath>Объект.Услуги.Услуга</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УслугиУслугаКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="УслугиУслугаExtendedTooltip" id="55"/>
+					<Events>
+						<Event name="OnChange">УслугиУслугаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="УслугиСкидка" id="33">
+					<DataPath>Объект.Услуги.Скидка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УслугиСкидкаКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="УслугиСкидкаExtendedTooltip" id="56"/>
+					<Events>
+						<Event name="OnChange">УслугиСкидкаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="УслугиКоличество" id="22">
+					<DataPath>Объект.Услуги.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УслугиКоличествоКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="УслугиКоличествоExtendedTooltip" id="57"/>
+					<Events>
+						<Event name="OnChange">УслугиКоличествоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="УслугиЦена" id="24">
+					<DataPath>Объект.Услуги.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УслугиЦенаКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="УслугиЦенаExtendedTooltip" id="58"/>
+					<Events>
+						<Event name="OnChange">УслугиКоличествоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="УслугиСумма" id="26">
+					<DataPath>Объект.Услуги.Сумма</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УслугиСуммаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="УслугиСуммаExtendedTooltip" id="59"/>
+				</InputField>
+				<InputField name="УслугиСуммаИтого" id="28">
+					<DataPath>Объект.Услуги.СуммаИтого</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Услуги.TotalСуммаИтого</FooterDataPath>
+					<FooterText>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итого:</v8:content>
+						</v8:item>
+					</FooterText>
+					<ContextMenu name="УслугиСуммаИтогоКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="УслугиСуммаИтогоExtendedTooltip" id="60"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ОказаниеУслуг</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.Услуги"/>
+			</Columns>
+		</Attribute>
+	</Attributes>
+</Form>
